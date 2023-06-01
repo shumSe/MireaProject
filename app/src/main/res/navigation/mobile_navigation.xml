@@ -33,5 +33,15 @@
         android:name="ru.mirea.shumikhin.mireaproject.ui.DataFragment"
         android:label="fragment_data"
         tools:layout="@layout/fragment_data" />
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="ru.mirea.shumikhin.mireaproject.ui.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/nav_temperature"
+        android:name="ru.mirea.shumikhin.mireaproject.ui.temperature_sensor.AmbientTemperatureFragment"
+        android:label="fragment_ambient_temperature"
+        tools:layout="@layout/fragment_ambient_temperature" />
 
 </navigation>

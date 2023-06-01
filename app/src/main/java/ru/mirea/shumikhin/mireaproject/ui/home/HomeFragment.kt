@@ -40,24 +40,15 @@ class HomeFragment : Fragment() {
             textView.text = it
         }
 
-        initWorker()
-
-        return root
-    }
-
-    private fun initWorker() {
         binding.btnStartWorker.setOnClickListener {
             val workRequest = OneTimeWorkRequest.Builder(WorkerRandomizer::class.java).build()
             WorkManager
                 .getInstance(requireContext())
                 .enqueue(workRequest)
+            binding.tvRandom.text = "${getWorkerMessage()}"
         }
-        lifecycleScope.launch {
-            repeat(Int.MAX_VALUE) {
-                binding.tvRandom.text = "${getWorkerMessage()}"
-                delay(1000)
-            }
-        }
+
+        return root
     }
 
     private fun getWorkerMessage(): String? {
