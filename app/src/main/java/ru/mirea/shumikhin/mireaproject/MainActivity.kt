@@ -26,16 +26,18 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
-        binding.appBarMain.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)
+
+        binding.appBarMain.fab.setOnClickListener { view ->
+            navController.navigate(R.id.nav_cryptography)
+        }
+
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_webview, R.id.nav_data
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_webview, R.id.nav_data,
+                R.id.nav_profile, R.id.nav_temperature, R.id.nav_cryptography
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

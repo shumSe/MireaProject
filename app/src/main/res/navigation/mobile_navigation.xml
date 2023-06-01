@@ -43,5 +43,10 @@
         android:name="ru.mirea.shumikhin.mireaproject.ui.temperature_sensor.AmbientTemperatureFragment"
         android:label="fragment_ambient_temperature"
         tools:layout="@layout/fragment_ambient_temperature" />
+    <fragment
+        android:id="@+id/nav_cryptography"
+        android:name="ru.mirea.shumikhin.mireaproject.ui.cryptography.CryptographyFragment"
+        android:label="fragment_cryptography"
+        tools:layout="@layout/fragment_cryptography" />
 
 </navigation>
